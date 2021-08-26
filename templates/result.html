@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Diabetes Predictor</title>
+	</head>
+    <body>
+<style>
+.footer {
+    background-color: #E9E9E9;
+    color: #000000;
+    padding: 0px;
+    text-align: center;
+    bottom: 0;
+    height: 32px;
+    width: 100%;	
+</style>
+
+        <!-- Website Title -->
+		<div class="container">
+            <center><h2 class='container-heading'><span class="heading_font"><b>Diabetes Predictor</b></span></h2>
+            <div class='description'>
+    			<p><i>A Machine Learning Web App, Built with <b>Flask</b>, Deployed using <b>Heroku.</b></i></p></center>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<center><h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" height="300px" width="300px" alt="Diabetes Image"></center>
+			{% elif prediction==0 %}
+				<center><h1>Prediction: <span class='danger	'>Great! You DON'T have diabetes.</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" height="300px" width="300px" alt="Not Diabetes Image"></center>
+			{% endif %}
+
+		</div>
+
+	</body>
+</html>
